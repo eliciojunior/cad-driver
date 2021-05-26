@@ -1,0 +1,82 @@
+/*author:starttemplate*/
+/*reference site : starttemplate.com*/
+body {
+  background: url('https://www.bluearrow.co.uk/-/media/bluearrow/blog/driving-community-2020/what-i-have-learnt-from-being-a-multi-drop-delivery-driver/dri20_23-image---banner---compressed.jpg?h=342&w=781&la=en&hash=64A25103713EDA1FE08AB1E5D7B7BACA') no-repeat center center fixed;
+  /*background-position: center;
+ *   background-size: cover;
+ *     background-repeat: repeat;*/
+  -webkit-background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font: normal 14px Nunito,arial,sans-serif;
+}
+
+.container {
+    padding: 110px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ffffff!important;
+  opacity: 1; /* Firefox */
+  font-size:18px!important;
+}
+/*.form-container {
+ *   display: flex;
+ *     justify-content: center;
+ *       align-itens: center;
+ *         margin-top: 1vh;
+ *         }*/
+.form-login {
+  background-color: rgba(0,0,0,0.55);
+  margin-top: 70px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+  border-color: #d2d2d2;
+  border-width: 5px;
+  color:black;
+  box-shadow:0 1px 0 #cfcfcf;
+}
+.form-control{
+  background: transparent!important;
+  color: black!important;
+  font-size: 18px!important;
+}
+h1{
+  color:white!important;
+}
+h4 { 
+ border:0 solid #fff; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+.text-white{
+  color: white!important;
+}
+.text-black{
+  color: black!important;
+}
+.wrapper {
+  text-align: center;
+}
+.footer {
+  font-size: 18px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+}
+.footer a{
+  text-decoration: none;
+  color: black;
+}
