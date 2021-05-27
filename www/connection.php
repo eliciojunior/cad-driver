@@ -1,8 +1,8 @@
 <?php
 $server = "db";
-$user = "datacenter";
-$pass = "Way775U%4";
-$db = "bdModulacao";
+$user = "admin";
+$pass = "admin123";
+$db = "dbCadDriver";
 
 //Create MySQL Connection
 $conn = mysqli_connect($server, $user, $pass, $db);

@@ -24,8 +24,8 @@ services:
     volumes:
       - ./dump:/docker-entrypoint-initdb.d
       - ./persistent:/var/lib/mysql
-  networks:
-    - default
+#  networks:
+#    - default
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links: 

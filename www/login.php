@@ -1,26 +1,32 @@
-<?php
+<?
 session_start();
-include_once "connection.php";
-if((isset($_POST["username"])) && (isset($_POST["password"]))){
-  $username = mysqli_real_escape_string($conn, trim($_POST["username"]));
-  $password = mysqli_real_escape_string($conn, trim($_POST["password"]));
-  $query = "SELECT * FROM tbUsuarios WHERE cmpLogin = '$username' AND cmpSenha = '$password'";
-  $result = mysqli_query($conn, $query);
-  $rows = mysqli_fetch_assoc($result);
-  if(empty($rows)){
+$mysqli = new mysqli("db","admin","admin123","dbCadDriver");
+$email = trim($_POST['InputEmail']);
+$password = trim($_POST['InputPassword']);
+// Check connection
+if ($mysqli -> connect_errno) {
+  echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+  exit();
+}
+// Perform query
+if ($result = $mysqli -> query("SELECT * FROM tbUsuarios WHERE email = '$email' AND password = '$password'")) {
+  if(empty($result -> num_rows)){
     $_SESSION["LoginErro"] = "Usuario ou senha inválido!";
+    $result -> free_result();
     header("Location: index.html");
-  } elseif(!empty($rows)) {
-    $_SESSION["usuarioLogin"] = $rows["cmpLogin"];
-    $_SESSION["usuarioSenha"] = $rows["cmpSenha"];
-    $_SESSION["usuarioNome"] = $rows["cmpNome"];
-    header("Location: dashboard.php");
+  } elseif(!empty($result -> num_rows)){
+    while($row = $result -> fetch_assoc()) {
+      $_SESSION['usuarioLogin'] = $row['email'];
+      $_SESSION['usuarioSenha'] = $row['password'];
+      $_SESSION['usuarioNome'] = $row['nome'];
+    };
+    $result -> free_result();
+    header("Location: home.php");
   } else {
     $_SESSION["LoginErro"] = "Usuario ou senha inválido!";
+    $result -> free_result();
     header("Location: index.html");
   }
-} else {
-  $_SESSION["LoginErro"] = "Usuario ou senha inválido!";
-  header("Location: index.html");
 }
+$mysqli -> close();
 ?>
