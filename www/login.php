@@ -8,6 +8,7 @@ if ($mysqli -> connect_errno) {
   echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
   exit();
 }
+
 // Perform query
 if ($result = $mysqli -> query("SELECT * FROM tbUsuarios WHERE email = '$email' AND password = '$password'")) {
   if(empty($result -> num_rows)){

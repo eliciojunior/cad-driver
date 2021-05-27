@@ -21,10 +21,10 @@ if (isset($_SESSION['usuarioLogin']) && isset($_SESSION['usuarioSenha'])){
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>Home</h1>
-<p> This is a home page</p>
-<p>Welcome <? print $_SESSION['usuarioNome']; ?></p>
-<a href="logout.php"><button type="button" class="btn btn-danger btn-md">Sair <i class="fa fa-sign-out"></i></button></a>
+  <h1>Home</h1>
+  <p> This is a home page</p>
+  <p>Welcome <? print $_SESSION['usuarioNome']; ?></p>
+  <a href="logout.php"><button type="button" class="btn btn-danger btn-md">Sair <i class="fa fa-sign-out"></i></button></a>
 </body>
 </html>
 <?
