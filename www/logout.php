@@ -5,5 +5,5 @@ unset(
   $_SESSION['usuarioSenha']
 );
 session_destroy();
-header('Location: index.html');
+header('Location: index.php');
 ?>

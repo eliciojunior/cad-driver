@@ -35,10 +35,22 @@
           <button type="submit" class="btn btn-success btn-md">Entrar <i class="fa fa-sign-in"></i></button>
         </span>
     </form>
+    <?php
+      $erro = $_GET['error'];
+      if($erro == "true"){
+      ?>
+      <div class="alert alert-danger" role="alert">
+      <strong>Ops!</strong> Usuário ou senha inválidos, tente novamente.
+        <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+      </div>
+      <? } ?>
   </div>
 </div>
 <!--footer-->
-<div class="footer text-black">
+<div class="footer text-white">
   <p>© 2021 CadDriver - Cadastro de Motoristas | Developed by <a href="https://github.com/eliciojunior">Elicio Junior</a></p>
 </div>
 <!--//footer-->

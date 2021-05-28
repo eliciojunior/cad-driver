@@ -14,7 +14,7 @@ if ($result = $mysqli -> query("SELECT * FROM tbUsuarios WHERE email = '$email' 
   if(empty($result -> num_rows)){
     $_SESSION["LoginErro"] = "Usuario ou senha inválido!";
     $result -> free_result();
-    header("Location: index.html");
+    header("Location: index.php?error=true");
   } elseif(!empty($result -> num_rows)){
     while($row = $result -> fetch_assoc()) {
       $_SESSION['usuarioLogin'] = $row['email'];
@@ -26,7 +26,7 @@ if ($result = $mysqli -> query("SELECT * FROM tbUsuarios WHERE email = '$email' 
   } else {
     $_SESSION["LoginErro"] = "Usuario ou senha inválido!";
     $result -> free_result();
-    header("Location: index.html");
+    header("Location: index.php?error=true");
   }
 }
 $mysqli -> close();
